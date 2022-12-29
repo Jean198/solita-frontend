@@ -4,7 +4,7 @@ import './navBar.css'
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-none">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               Helsinki City Bikes
@@ -31,6 +31,12 @@ const NavBar = () => {
                 </li>
                 <li className="nav-item">
                 <Link to="/stations-map" className="nav-link active">Stations Map</Link>
+                </li>
+                <li className="nav-item">
+                <Link to="#" className="nav-link active">Add Trip</Link>
+                </li>
+                <li className="nav-item">
+                <Link to="#" className="nav-link active">Add Station</Link>
                 </li>
               </ul>
             </div>

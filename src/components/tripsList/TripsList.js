@@ -1,13 +1,14 @@
 import React from "react";
 import "./tripsList.css";
 import "../searchForm/SearchForm"
+import bike_img from '../../assets/images/bikes-img.jpg'
 import SearchForm from "../searchForm/SearchForm";
 
 const TripsList = ({tripsData}) => {
   return (
     <div className="container">
       <div>
-        <img src="" alt="" />
+        <img src={bike_img} alt="" className="bikes-img"/>
       </div>
       <SearchForm/>
       <div className="table-responsive mt-3">
