@@ -5,6 +5,7 @@ import bike_img from '../../assets/images/bikes-img.jpg'
 import SearchForm from "../searchForm/SearchForm";
 import Trip from "../trip/Trip";
 import axios from 'axios'
+import ReactPaginate from "react-paginate";
 
 
 const TripsList = () => {
@@ -76,6 +77,10 @@ const TripsList = () => {
               })}
           </tbody>
         </table>
+        <p className="data-statistics">
+            Total Rows: <b>{totalRows}</b> &nbsp;&nbsp;&nbsp; Page: <b>{totalRows ? pageNumber + 1 : null}</b> of{" "}
+            <b>{numberOfPages}</b>
+          </p>
       </div>
     </div>
   );
