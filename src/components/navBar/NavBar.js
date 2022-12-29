@@ -27,10 +27,10 @@ const NavBar = () => {
                   <Link to="/" className="nav-link active">All Trips</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="/notes" className="nav-link active">Stations</Link>
+                <Link to="/stations" className="nav-link active">Stations</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="/create" className="nav-link active">Stations Map</Link>
+                <Link to="/stations-map" className="nav-link active">Stations Map</Link>
                 </li>
               </ul>
             </div>
