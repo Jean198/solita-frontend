@@ -1,0 +1,18 @@
+.stations-table{
+    width: 50%!important;
+    margin: 0 auto;
+}
+
+.station-row{
+    transition:0.4s;
+}
+.station-row:hover{
+  background-color: grey;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .stations-table {
+      width: 100%!important;
+    }
+  }

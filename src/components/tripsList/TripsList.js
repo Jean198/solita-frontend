@@ -17,13 +17,11 @@ const TripsList = () => {
   const [searchType, setSearchType] = useState("departure_station_id");
 
   const getTrips = async () => {
-    console.log(searchString);
-    const response = await axios
+    await axios
       .get(
         `http://localhost:5000?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
       )
       .then((response) => {
-        console.log(response.data.data);
         setTripsData(response.data.data);
         setTotalRows(response.data.paging.total);
         setPageNumber(response.data.paging.page);
