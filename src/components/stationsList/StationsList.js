@@ -5,12 +5,12 @@ import station_img from "../../assets/images/station-img.png";
 import "./stationsList.css";
 import ReactPaginate from "react-paginate";
 
-const StationsList = ({changePage}) => {
+const StationsList = ({changePage, handleSearch, searchString}) => {
   const data = useContext(StationsContext);
   const stationsList = data.data;
   const paging = data.paging;
-  const totalRows=paging.totalRows;
-  const pageNumber=paging.page+1;
+  const totalRows=paging.total;
+  const pageNumber=paging.page;
   const numberOfPages=paging.numberOfPages
 
   return (
@@ -19,6 +19,17 @@ const StationsList = ({changePage}) => {
         <img src={station_img} alt="" className="station-img" />
       </div>
       <div className="col-lg-6">
+        <form action="form">
+        <input
+              type="search"
+              id="form1"
+              className="form-control"
+              placeholder="Search"
+              aria-label="Search"
+              value={searchString}
+              onChange={handleSearch}
+            />
+        </form>
         <div className="table-responsive ">
           <table className=" table stations-table">
             <thead className="table-head ">
@@ -40,14 +51,14 @@ const StationsList = ({changePage}) => {
         </div>
 
         <div className="row mt-5">
-          <div className="col-lg-4">
+          <div className="col-lg-6">
             <p className="data-statistics">
               Total Rows: <b>{totalRows}</b> &nbsp;&nbsp;&nbsp; Page:{" "}
-              <b>{totalRows ? pageNumber + 1 : null}</b> of{" "}
+              <b>{totalRows ? pageNumber+1 : null}</b> of{" "}
               <b>{numberOfPages}</b>
             </p>
           </div>
-          <div className="col-lg-8">
+          <div className="col-lg-6">
             <ReactPaginate
               previousLabel={"<<"}
               nextLabel={">>"}

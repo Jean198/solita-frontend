@@ -12,18 +12,16 @@ import StationDetails from "./components/stationDetails/StationDetails";
 function App() {
   const [data, setData] = useState({});
   const [pageNumber, setPageNumber] = useState(0);
-  const [limit, setLimit] = useState(10);
   const [searchString, setSearchString] = useState("");
-  const [searchType, setSearchType] = useState("name");
 
   const getStations = async () => {
     try {
       await axios
         .get(
-          `http://localhost:5000/stations?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
+          `http://localhost:5000/stations/?page=${pageNumber}&search=${searchString}`
         )
         .then((response) => {
-          console.log(response.data)
+          console.log(response.data);
           setData(response.data);
         });
     } catch (error) {
@@ -35,9 +33,14 @@ function App() {
     setPageNumber(selected);
   };
 
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+    setSearchString(e.target.value);
+  };
+
   useEffect(() => {
     getStations();
-  }, [pageNumber]);
+  }, [pageNumber, searchString]);
 
   return (
     <Router>
@@ -48,7 +51,16 @@ function App() {
             <Route path="/" element={<TripList />} />
             <Route path="/stations-map" element={<StationsMap />} />
 
-            <Route path="/stations" element={<StationsList changePage={changePage}/>} />
+            <Route
+              path="/stations"
+              element={
+                <StationsList
+                  changePage={changePage}
+                  handleSearch={handleSearch}
+                  searchString={searchString}
+                />
+              }
+            />
             <Route path="/stations/station/:id" element={<StationDetails />} />
           </Routes>
         </StationsContext.Provider>
