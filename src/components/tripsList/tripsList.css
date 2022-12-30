@@ -1,5 +1,8 @@
+.table{
+    border:solid 1px #157347;
+}
 .table-head{
-    background-color: #23BEA0;
+    background-color: #157347;
     color:white;
 }
 
@@ -16,4 +19,26 @@
     background-color: #E0E3F5;
     color: Black;
     padding: 5px 5px;
+}
+
+.btn-success{
+    background-color: #157347!important;
+}
+
+
+
+.pagination-list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+
+}
+
+
+
+.pagination-list a{
+    text-decoration: none;
+    color:black !important
+
 }

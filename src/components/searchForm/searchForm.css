@@ -1,7 +1,9 @@
 .form-control{
     border-radius:0px!important;
+    border: solid 1px #157347 !important;
 }
 
 .form-select{
-    padding:5px
+    padding:5px;
+    border: solid 1px #157347 !important;
 }
