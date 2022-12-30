@@ -5,6 +5,7 @@
 
 .station-row{
     transition:0.4s;
+    cursor: pointer !important;
 }
 .station-row:hover{
   background-color: grey;

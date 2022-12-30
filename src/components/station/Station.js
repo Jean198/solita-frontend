@@ -1,17 +1,23 @@
-import './station.css'
+import "./station.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import React from 'react'
-
-const Station = ({station}) => {
+const Station = ({ station }) => {
+  const navigate = useNavigate();
+  const handleRowClick = (id) => {
+    navigate(`/stations/station/${station.id}`);
+  };
   return (
-    <><tr className='station-row'>
-      <td></td>
-      <td>{station.FID}</td>
-      <td>{station.name}</td>
+    <>
+        <tr onClick={()=>handleRowClick(station.id)} className="station-row">
+          <td></td>
+          <td>{station.FID}</td>
+          <td>{station.name}</td>
+        </tr>
 
-    </tr>
     </>
-  )
-}
+  );
+};
 
-export default Station
+export default Station;
