@@ -4,8 +4,10 @@ import StationsContext from "../../context/StationsContext";
 import './stationDetails.css'
 import axios from 'axios'
 
+
 const StationDetails = () => {
-  const stastionsList = useContext(StationsContext);
+  const data = useContext(StationsContext);
+  const stationsList=data.data
   const[stationsOccurencesCount, setStationsOccurencesCount]=useState([]);
   let { id } = useParams();
 
@@ -28,12 +30,12 @@ const StationDetails = () => {
 
   return (
     <div className="station-details-container">
-      {stastionsList
+      {stationsList
         .filter((station) => station.id === id)
         .map((station) => {
           return (<>
-          <h2>{station.name}</h2>
-          <p><b>Address:</b> {station.address}</p>
+          <h1>{station.name}</h1>
+          <p><b>Address:</b> <span className="address">{station.address}</span></p>
           <p>Number of Journeys starting from this Station: <b>{stationsOccurencesCount.departureCounts}</b></p>
           <p>Number of Journeys Ending at this Station: <b>{stationsOccurencesCount.returnCounts}</b></p>
           </>);

@@ -10,33 +10,46 @@ import axios from "axios";
 import StationDetails from "./components/stationDetails/StationDetails";
 
 function App() {
-  const [stationsData, setStationsData] = useState([]);
+  const [data, setData] = useState({});
+  const [pageNumber, setPageNumber] = useState(0);
+  const [limit, setLimit] = useState(10);
+  const [searchString, setSearchString] = useState("");
+  const [searchType, setSearchType] = useState("name");
 
   const getStations = async () => {
     try {
-      await axios.get(`http://localhost:5000/stations`).then((response) => {
-        setStationsData(response.data);
-      });
+      await axios
+        .get(
+          `http://localhost:5000/stations?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
+        )
+        .then((response) => {
+          console.log(response.data)
+          setData(response.data);
+        });
     } catch (error) {
       console.log(error.message);
     }
   };
 
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   useEffect(() => {
     getStations();
-  }, []);
+  }, [pageNumber]);
 
   return (
     <Router>
       <div className="container">
         <NavBar />
-        <StationsContext.Provider value={stationsData}>
+        <StationsContext.Provider value={data}>
           <Routes>
             <Route path="/" element={<TripList />} />
             <Route path="/stations-map" element={<StationsMap />} />
 
-            <Route path="/stations" element={<StationsList />} />
-            <Route path="/stations/station/:id" element={<StationDetails/>} />
+            <Route path="/stations" element={<StationsList changePage={changePage}/>} />
+            <Route path="/stations/station/:id" element={<StationDetails />} />
           </Routes>
         </StationsContext.Provider>
       </div>
