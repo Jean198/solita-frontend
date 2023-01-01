@@ -15,7 +15,6 @@ const StationDetails = () => {
 
     try {
       await axios.get(`http://localhost:5000/stations/station/${id}`).then((response) => {
-        console.log(response.data)
         setStationsOccurencesCount(response.data);
       });
     } catch (error) {

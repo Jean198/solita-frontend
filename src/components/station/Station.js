@@ -13,7 +13,7 @@ const Station = ({ station,index }) => {
     <>
         <tr onClick={()=>{handleRowClick(station.id)}} className="station-row" key={index}>
           <td></td>
-          <td>{station.FID}</td>
+          <td>{station.id}</td>
           <td>{station.name}</td>
         </tr>
 

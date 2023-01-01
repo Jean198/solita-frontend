@@ -23,7 +23,6 @@ function App() {
           `http://localhost:5000/stations/?page=${pageNumber}&search=${searchString}`
         )
         .then((response) => {
-          console.log(response.data);
           setData(response.data);
         });
     } catch (error) {
@@ -36,7 +35,6 @@ function App() {
   };
 
   const handleSearch = (e) => {
-    console.log(e.target.value);
     setSearchString(e.target.value);
   };
 

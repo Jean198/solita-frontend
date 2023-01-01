@@ -35,7 +35,7 @@ const StationsList = ({changePage, handleSearch, searchString}) => {
             <thead className="table-head ">
               <tr>
                 <th scope="col"></th>
-                <th>FID</th>
+                <th>Station Id</th>
                 <th scope="col">Station name</th>
               </tr>
             </thead>
