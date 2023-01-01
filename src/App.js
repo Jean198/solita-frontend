@@ -5,6 +5,8 @@ import TripList from "./components/tripsList/TripsList";
 import StationsList from "./components/stationsList/StationsList";
 import StationsMap from "./components/stationsMap/StationsMap";
 import StationsContext from "./context/StationsContext";
+import AddTrip from "./components/addTrip/AddTrip";
+import AddStation from "./components/addStation/AddStation";
 import "./App.css";
 import axios from "axios";
 import StationDetails from "./components/stationDetails/StationDetails";
@@ -62,6 +64,8 @@ function App() {
               }
             />
             <Route path="/stations/station/:id" element={<StationDetails />} />
+            <Route path="/trips/add-trip" element={<AddTrip />} />
+            <Route path="/stations/add-station" element={<AddStation />} />
           </Routes>
         </StationsContext.Provider>
       </div>

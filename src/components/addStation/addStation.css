@@ -1,0 +1,12 @@
+.form-inline{
+    width:50%;
+    margin: 0 auto;
+    border:solid 1px #157347;
+    padding: 5% 3%;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-inline {
+      width: 100%!important;
+    }
+  }

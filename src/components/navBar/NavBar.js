@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-none">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Helsinki City Bikes
             </a>
             <button
@@ -33,10 +33,10 @@ const NavBar = () => {
                 <Link to="/stations-map" className="nav-link active">Stations Map</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="#" className="nav-link active">Add Trip</Link>
+                <Link to="/trips/add-trip" className="nav-link active">Add Trip</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="#" className="nav-link active">Add Station</Link>
+                <Link to="/stations/add-station" className="nav-link active">Add Station</Link>
                 </li>
               </ul>
             </div>
