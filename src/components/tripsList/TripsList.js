@@ -15,6 +15,8 @@ const TripsList = () => {
   const [totalRows, setTotalRows] = useState(0);
   const [searchString, setSearchString] = useState("");
   const [searchType, setSearchType] = useState("departure_station_id");
+  const [popularDepartureStations, setPopularDepartureStations] = useState([]);
+  const [popularReturnStations, setPopularReturnStations] = useState([]);
 
   const getTrips = async () => {
     await axios
@@ -26,6 +28,8 @@ const TripsList = () => {
         setTotalRows(response.data.paging.total);
         setPageNumber(response.data.paging.page);
         setNumberOfPages(response.data.paging.numberOfPages);
+        setPopularDepartureStations(response.data.popularDepartureStations);
+        setPopularReturnStations(response.data.popularReturnStations);
       });
   };
 
@@ -98,6 +102,34 @@ const TripsList = () => {
               activeLinkClassName={"btn btn-success"}
               disabledClassName={"btn btn-light"}
             />
+          </div>
+        </div>
+        <hr />
+        <div className="row mt-5">
+          <div className="col-lg-6 ">
+            <h4>Top 5 popular departure stations</h4>
+            <hr />
+            {popularDepartureStations &&
+              popularDepartureStations.map((station, index) => {
+                return (
+                  <p>
+                    {index + 1}. {station._id}  (<b>{station.count}</b> departure trips)
+                  </p>
+                );
+              })}
+          </div>
+
+          <div className="col-lg-6">
+            <h4>Top 5 popular return stations</h4>
+            <hr />
+            {popularReturnStations &&
+              popularReturnStations.map((station, index) => {
+                return (
+                  <p>
+                    {index + 1}. {station._id}  (<b>{station.count}</b> Return trips)
+                  </p>
+                );
+              })}
           </div>
         </div>
       </div>
