@@ -23,13 +23,13 @@ const AddStation = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (station.id === "" || station.name==="" || station.address==="" || station.operator==="" || station.capacity==="") {
-      return toast.error("Task name can not be empty");
+      return toast.error("Station name can not be empty");
     }
     try {
       await axios.post(`http://localhost:5000/stations/add-station`, station);
-      toast.success("Task added successfully!");
-      setStation((prevTask) => {
-        return { ...prevTask, id: "", name:"",address:"",operator:"",capacity:"" };
+      toast.success("Station added successfully!");
+      setStation((prevStation) => {
+        return { ...prevStation, id: "", name:"",address:"",operator:"",capacity:"" };
       });
     } catch (error) {
       toast.error(error.message);
