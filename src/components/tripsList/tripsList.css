@@ -1,8 +1,8 @@
 .table{
-    border:solid 1px #157347;
+    border:solid 1px #004249;
 }
 .table-head{
-    background-color: #157347;
+    background-color: #004249;
     color:white;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .btn-success{
-    background-color: #157347!important;
+    background-color: #004249!important;
 }
 
 
@@ -42,3 +42,28 @@
     color:black !important
 
 }
+
+.popular-stations{
+    background-color: #004249;
+    color: white;
+    padding: 10% 5%;
+
+}
+
+.popular-departure-stations{
+    border-right:solid white 1px !important;
+}
+
+.popular-return-stations{
+    padding-left: 50px!important;
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    .popular-return-stations {
+        padding-left: 0px !important;
+        margin-top: 15%!important;
+
+    }
+  }

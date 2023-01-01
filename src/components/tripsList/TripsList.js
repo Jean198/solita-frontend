@@ -105,8 +105,8 @@ const TripsList = () => {
           </div>
         </div>
         <hr />
-        <div className="row mt-5">
-          <div className="col-lg-6 ">
+        <div className="row mt-5 popular-stations">
+          <div className="col-lg-5 popular-departure-stations">
             <h4>Top 5 popular departure stations</h4>
             <hr />
             {popularDepartureStations &&
@@ -119,7 +119,7 @@ const TripsList = () => {
               })}
           </div>
 
-          <div className="col-lg-6">
+          <div className="col-lg-7 popular-return-stations">
             <h4>Top 5 popular return stations</h4>
             <hr />
             {popularReturnStations &&
