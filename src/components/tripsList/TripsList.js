@@ -57,21 +57,18 @@ const TripsList = () => {
 
   return (
     <div className="container">
-      <div>
+      {/* <div>
         <img src={bike_img} alt="" className="bikes-img" />
-      </div>
+      </div>*/}
       <SearchForm
         handleSearch={handleSearch}
         searchString={searchString}
         handleOptionsChange={handleOptionsChange}
       />
       <div className="table-responsive mt-3">
-
-          <div className="trips-loading">
-          {loading && (
-            <img src={loader} alt="" className="loader"/>
-            )}
-          </div>
+        <div className="trips-loading">
+          {loading && <img src={loader} alt="" className="loader" />}
+        </div>
 
         <table className=" table">
           <thead className="table-head ">

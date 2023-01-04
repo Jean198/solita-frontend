@@ -7,7 +7,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg bg-none">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
-              Helsinki City Bikes
+              <h2>Helsinki Bike Trips</h2>
             </a>
             <button
               className="navbar-toggler"
