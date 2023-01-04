@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import StationsContext from "../../context/StationsContext";
 import "./stationDetails.css";
 import axios from "axios";
+import loader from "../../assets/images/loader.gif"
 
 const StationDetails = () => {
   const data = useContext(StationsContext);
@@ -66,7 +67,7 @@ const StationDetails = () => {
 
                     {loading ? (
                       <div className="loading">
-                        <b>Please wait while fetching...</b>
+                        <img src={loader} alt="" />
                       </div>
                     ) : null}
 
@@ -76,7 +77,7 @@ const StationDetails = () => {
                           return (
                             <div key={index} className="">
                               <p>
-                                {index + 1}. {station._id}(Departures:{" "}
+                                <b>{index + 1}</b>. {station._id}(Departures:{" "}
                                 {station.count})
                               </p>
                               <p></p>
@@ -97,7 +98,7 @@ const StationDetails = () => {
 
                     {loading ? (
                       <div className="loading">
-                        <b>Please wait while fetching...</b>
+                        <img src={loader} alt="" />
                       </div>
                     ) : null}
 
@@ -107,7 +108,7 @@ const StationDetails = () => {
                           return (
                             <div key={index}>
                               <p>
-                                {index + 1}. {station._id}(Returns:{" "}
+                                <b>{index + 1}</b>. {station._id}(Returns:{" "}
                                 {station.count})
                               </p>
                               <p></p>
