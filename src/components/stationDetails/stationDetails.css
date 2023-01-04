@@ -11,9 +11,21 @@
   color:#157347;
 }
 
+.station-box{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 5% 3%;
+}
+
 
 @media only screen and (max-width: 768px) {
     .station-details-container {
       width: 100%!important;
     }
   }
+
+.loading{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  height:200px;
+}
