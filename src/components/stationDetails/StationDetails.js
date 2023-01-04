@@ -1,15 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import StationsContext from "../../context/StationsContext";
 import "./stationDetails.css";
 import axios from "axios";
 import loader from "../../assets/images/loader.gif";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import leaflet from "../../assets/leaflet/leaflet";
+import "leaflet/dist/leaflet.css";
+import { defaultIcon } from "../../icons/defaultIcon";
 
 const StationDetails = () => {
   const data = useContext(StationsContext);
   const stationsList = data.data;
+  console.log(stationsList);
   const [singleStationData, setsingleStationData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
+  const ZOOM_LEVEL = 15;
+  const mapRef = useRef();
 
   let { id } = useParams();
 
@@ -29,7 +38,7 @@ const StationDetails = () => {
 
   useEffect(() => {
     countStationsOccurences(id);
-  }, []);
+  }, [id]);
 
   return (
     <div className="station-details-container">
@@ -39,12 +48,33 @@ const StationDetails = () => {
           .map((station, index) => {
             return (
               <div key={index}>
-                <h1>{station.name}</h1>
-                <div  className="row station-box">
+                <h1>{station.name}</h1><b>Street name:</b>{" "}
+                      <span className="address">{station.address}</span>
+                <div className="row station-box">
+                  <MapContainer
+                    center={[station.y, station.x]}
+                    zoom={ZOOM_LEVEL}
+                    ref={mapRef}
+                  >
+                    <TileLayer
+                      url={leaflet.maptiler.url}
+                      attribution={leaflet.maptiler.attribution}
+                    />
+                    <Marker
+                      position={[station.y, station.x]}
+                      icon={defaultIcon}
+                    >
+                      <Popup>
+                        <b>{station.address}</b>
+                      </Popup>
+                    </Marker>
+                  </MapContainer>
+                </div>
+
+                <div className="row station-box">
                   <ul>
                     <li>
-                      <b>Address:</b>{" "}
-                      <span className="address">{station.address}</span>
+
                       <ul className="mt-3">
                         <li>
                           Number of trips starting from this Station:{" "}
@@ -57,16 +87,20 @@ const StationDetails = () => {
                         <li>
                           Average distance of trips starting from this station:{" "}
                           <b>
-                            {singleStationData.averageDepartureDistance && singleStationData.averageDepartureDistance.toFixed(
-                              2
-                            )}
+                            {singleStationData.averageDepartureDistance &&
+                              singleStationData.averageDepartureDistance.toFixed(
+                                2
+                              )}
                           </b>{" "}
                           meters
                         </li>
                         <li>
                           Average distance of trips ending at this station:{" "}
                           <b>
-                            {singleStationData.averageReturnDistance && singleStationData.averageReturnDistance.toFixed(2)}
+                            {singleStationData.averageReturnDistance &&
+                              singleStationData.averageReturnDistance.toFixed(
+                                2
+                              )}
                           </b>{" "}
                           meters
                         </li>

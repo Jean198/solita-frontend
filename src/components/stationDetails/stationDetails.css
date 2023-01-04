@@ -1,10 +1,15 @@
 .station-details-container{
     width: 60vw;
     margin: 5rem auto;
-    border: #DEE2E6 solid 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 0.25rem;
     background-color: white;
     padding: 5% 5%;
+}
+
+.leaflet-container{
+height:400px;
+width:100%;
 }
 
 .address{
