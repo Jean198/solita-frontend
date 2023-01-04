@@ -24,19 +24,17 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link active">All Trips</Link>
+                  <Link to="/" className="nav-link active">ALL TRIPS</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="/stations" className="nav-link active">Stations</Link>
+                <Link to="/stations" className="nav-link active">STATIONS</Link>
+                </li>
+
+                <li className="nav-item">
+                <Link to="/trips/add-trip" className="nav-link active">ADD TRIP</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="/stations-map" className="nav-link active">Stations Map</Link>
-                </li>
-                <li className="nav-item">
-                <Link to="/trips/add-trip" className="nav-link active">Add Trip</Link>
-                </li>
-                <li className="nav-item">
-                <Link to="/stations/add-station" className="nav-link active">Add Station</Link>
+                <Link to="/stations/add-station" className="nav-link active">ADD STATION</Link>
                 </li>
               </ul>
             </div>

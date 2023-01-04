@@ -6,6 +6,7 @@ import SearchForm from "../searchForm/SearchForm";
 import Trip from "../trip/Trip";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+import loader from "../../assets/images/loader.gif";
 
 const TripsList = () => {
   const [tripsData, setTripsData] = useState([]);
@@ -17,8 +18,10 @@ const TripsList = () => {
   const [searchType, setSearchType] = useState("departure_station_id");
   const [popularDepartureStations, setPopularDepartureStations] = useState([]);
   const [popularReturnStations, setPopularReturnStations] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getTrips = async () => {
+    setLoading(true);
     await axios
       .get(
         `http://localhost:5000?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
@@ -31,6 +34,7 @@ const TripsList = () => {
         setPopularDepartureStations(response.data.popularDepartureStations);
         setPopularReturnStations(response.data.popularReturnStations);
       });
+    setLoading(false);
   };
 
   const handleSearch = (e) => {
@@ -81,6 +85,13 @@ const TripsList = () => {
               })}
           </tbody>
         </table>
+
+        {loading && (
+          <div className="trips-loading mt-5">
+            <img src={loader} alt="" />
+          </div>
+        )}
+
         <div className="row mt-5">
           <div className="col-lg-4">
             <p className="data-statistics">
@@ -113,7 +124,8 @@ const TripsList = () => {
               popularDepartureStations.map((station, index) => {
                 return (
                   <p>
-                    {index + 1}. {station._id}  (<b>{station.count}</b> departure trips)
+                    {index + 1}. {station._id} (<b>{station.count}</b> departure
+                    trips)
                   </p>
                 );
               })}
@@ -126,7 +138,8 @@ const TripsList = () => {
               popularReturnStations.map((station, index) => {
                 return (
                   <p>
-                    {index + 1}. {station._id}  (<b>{station.count}</b> Return trips)
+                    {index + 1}. {station._id} (<b>{station.count}</b> Return
+                    trips)
                   </p>
                 );
               })}

@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import Station from "../station/Station";
 import StationsContext from "../../context/StationsContext";
 import station_img from "../../assets/images/station-img.png";
 import "./stationsList.css";
 import ReactPaginate from "react-paginate";
+
 
 const StationsList = ({changePage, handleSearch, searchString}) => {
   const data = useContext(StationsContext);
@@ -40,6 +41,7 @@ const StationsList = ({changePage, handleSearch, searchString}) => {
               </tr>
             </thead>
             <tbody>
+
               {stationsList &&
                 stationsList.map((station, index) => {
                   return (
