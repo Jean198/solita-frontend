@@ -1,5 +1,5 @@
 .station-details-container{
-    width: 40vw;
+    width: 60vw;
     margin: 5rem auto;
     border: #DEE2E6 solid 2px;
     border-radius: 0.25rem;
@@ -28,4 +28,8 @@
  justify-content: center;
  align-items: center;
   height:200px;
+}
+
+ul li{
+  list-style: none;
 }
