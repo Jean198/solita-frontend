@@ -1,5 +1,6 @@
 .table{
     border:solid 1px #004249;
+    min-height: 50vh;
 }
 .table-head{
     background-color: #004249;
@@ -70,7 +71,11 @@
 
 
   .trips-loading{
-    margin: 0 auto !important;
     text-align: center;
-
+    height:30px!important;
   }
+
+  .loader{
+    width:30px
+  }
+

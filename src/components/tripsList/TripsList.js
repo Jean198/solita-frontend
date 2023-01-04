@@ -66,6 +66,13 @@ const TripsList = () => {
         handleOptionsChange={handleOptionsChange}
       />
       <div className="table-responsive mt-3">
+
+          <div className="trips-loading">
+          {loading && (
+            <img src={loader} alt="" className="loader"/>
+            )}
+          </div>
+
         <table className=" table">
           <thead className="table-head ">
             <tr>
@@ -85,12 +92,6 @@ const TripsList = () => {
               })}
           </tbody>
         </table>
-
-        {loading && (
-          <div className="trips-loading mt-5">
-            <img src={loader} alt="" />
-          </div>
-        )}
 
         <div className="row mt-5">
           <div className="col-lg-4">
