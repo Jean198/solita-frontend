@@ -10,6 +10,7 @@ import AddStation from "./components/addStation/AddStation";
 import "./App.css";
 import axios from "axios";
 import StationDetails from "./components/stationDetails/StationDetails";
+import Home from "./components/home/Home";
 
 function App() {
   const [data, setData] = useState({});
@@ -48,7 +49,8 @@ function App() {
         <NavBar />
         <StationsContext.Provider value={data}>
           <Routes>
-            <Route path="/" element={<TripList />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/trips" element={<TripList />} />
             <Route path="/stations-map" element={<StationsMap />} />
 
             <Route
