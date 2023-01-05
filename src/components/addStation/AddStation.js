@@ -1,16 +1,23 @@
-import React, {useState, useEffect}from "react";
+import React, { useState } from "react";
 import "./addStation.css";
-import {ToastContainer,toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import {useNavigate} from 'react-router-dom';
 
 const AddStation = () => {
-  const[station, setStation]=useState({
-    id:"",
-    name:"",
-    address:"",
-    operator:"",
-  })
+  const navigate = useNavigate();
+
+  const [station, setStation] = useState({
+    fid: "",
+    stationId: "",
+    stationName: "",
+    stationAddress: "",
+    city: "",
+    operator: "",
+    latitude: "",
+    longitude: "",
+  });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -21,22 +28,42 @@ const AddStation = () => {
 
   // Post a new Station
   const handleSubmit = async (event) => {
+    console.log(station);
     event.preventDefault();
-    if ((station.id === "" || station.name === "" || station.address === "" || station.operator === "" )) {
-      console.log("Id is null")
+    if (
+      station.fid === "" ||
+      station.stationId === "" ||
+      station.stationName === "" ||
+      station.stationAddress === "" ||
+      station.city === "" ||
+      station.operator === "" ||
+      station.latitude === "" ||
+      station.longitude === ""
+    ) {
       return toast.error("One or more information is missing", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_CENTER,
       });
     }
     try {
-      console.log("This is my station", station)
       await axios.post(`http://localhost:5000/stations/add-station`, station);
       toast.success("Station added successfully!", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_CENTER,
       });
-      setStation((prevStation) => {
-        return { ...prevStation, id: "", name:"",address:"",operator:"",capacity:"" };
-      });
+      setStation( {
+          fid: "",
+          stationId: "",
+          stationName: "",
+          stationAddress: "",
+          city: "",
+          operator: "",
+          latitude: "",
+          longitude: "",
+        }
+      );
+
+      setTimeout(()=>{
+        navigate('/stations');
+      },2000)
     } catch (error) {
       toast.error(error.message);
     }
@@ -45,37 +72,96 @@ const AddStation = () => {
   return (
     <div className="container">
       <ToastContainer />
-      <form class="form-inline" onSubmit={handleSubmit }>
-        <h2>Add New Station</h2>
-        <div class="form-group ">
-          <label for="email">Station Id :</label>
-          <input type="text" class="form-control form-control-sm " id="id" name="id" onChange={handleInputChange}/>
-        </div>
-        <div class="form-group">
-          <label for="pwd">Name:</label>
-          <input type="text" class="form-control form-control-sm" id="name" name="name" onChange={handleInputChange}/>
-        </div>
-        <div class="form-group">
-          <label for="pwd">Address:</label>
+      <form className="form-inline" onSubmit={handleSubmit}>
+        <h2>Add new station</h2>
+        <div className="form-group ">
+          <label htmlFor="email">FID :</label>
           <input
-            type="text"
-            class="form-control form-control-sm"
-            id="address"
-            name="address"
+            type="number"
+            className="form-control form-control-sm "
+            id="fid"
+            name="fid"
             onChange={handleInputChange}
           />
         </div>
-        <div class="form-group">
-          <label for="pwd">Operator:</label>
+        <div className="form-group ">
+          <label htmlFor="email">Station Id :</label>
+          <input
+            type="number"
+            className="form-control form-control-sm "
+            id="station-id"
+            name="stationId"
+            value={station.stationId}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="pwd">Station name:</label>
           <input
             type="text"
-            class="form-control form-control-sm"
+            className="form-control form-control-sm"
+            id="name"
+            value={station.stationName}
+            name="stationName"
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="pwd">Station address:</label>
+          <input
+            type="text"
+            className="form-control form-control-sm"
+            id="station-address"
+            name="stationAddress"
+            value={station.stationAddress}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="pwd">City:</label>
+          <input
+            type="text"
+            className="form-control form-control-sm"
+            id="city"
+            name="city"
+            value={station.city}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="pwd">Operator:</label>
+          <input
+            type="text"
+            className="form-control form-control-sm"
             id="operator"
             name="operator"
+            value={station.operator}
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit" class="btn btn-success mt-3">
+        <div className="form-group">
+          <label htmlFor="pwd">Latitude:</label>
+          <input
+            type="number"
+            className="form-control form-control-sm"
+            id="latitude"
+            name="latitude"
+            value={station.latitude}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="pwd">Longitude:</label>
+          <input
+            type="text"
+            className="form-control form-control-sm"
+            id="longitude"
+            name="longitude"
+            value={station.longitude}
+            onChange={handleInputChange}
+          />
+        </div>
+        <button type="submit" className="btn btn-success mt-3">
           Submit
         </button>
       </form>
