@@ -10,11 +10,12 @@ const SearchForm = ({handleSearch, searchString, handleOptionsChange}) => {
             <select
               name="languages"
               id="lang"
-              className="form-select form-control"
+              className="trips-form form-select form-control shadow-none "
               onChange={handleOptionsChange}
+
             >
-              <option value="departure_station_id" type="string">
-                Search by
+              <option  value="departure_station_id" type="string">
+                <div>Search by</div>
               </option>
               <option value="departure_station_name" type="string">
                 Departure Station name
@@ -34,7 +35,7 @@ const SearchForm = ({handleSearch, searchString, handleOptionsChange}) => {
             <input
               type="search"
               id="form1"
-              className="form-control"
+              className="trips-form form-control shadow-none"
               placeholder="Search"
               aria-label="Search"
               value={searchString}

@@ -1,7 +1,6 @@
-import React, { startTransition, useContext, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Station from "../station/Station";
 import StationsContext from "../../context/StationsContext";
-import station_img from "../../assets/images/station-img.png";
 import "./stationsList.css";
 import ReactPaginate from "react-paginate";
 
@@ -99,11 +98,11 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
               nextLabel={">>"}
               pageCount={numberOfPages}
               onPageChange={changePage}
-              containerClassName={"pagination-list"}
-              pageLinkClassName={"btn "}
-              previousClassName={"btn btn-info previous-button"}
-              nextClassName={"btn btn-info"}
-              activeLinkClassName={"btn btn-success"}
+              containerClassName={" pagination-btn pagination-list"}
+              pageLinkClassName={" pagination-btn btn "}
+              previousClassName={" pagination-btn btn btn-info previous-button"}
+              nextClassName={" pagination-btn btn btn-info"}
+              activeLinkClassName={" btn btn-success"}
               disabledClassName={"btn btn-light"}
             />
           </div>

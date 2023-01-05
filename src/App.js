@@ -42,7 +42,7 @@ function App() {
 
   useEffect(() => {
     getStations();
-  }, [searchString]);
+  },[pageNumber,searchString]);
 
   return (
     <Router>
