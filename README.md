@@ -20,7 +20,7 @@ The backend is built with JavaScript, Node js and Express js framework. You need
 
 
 - ### Frontend:
-The frontend is built with JavaScript and React library. You need to have **Node js** and **Npm** installed on your computer. To run the application, make sure your backend is running. Then add a **.env** file in the root directory. In the **.env** file add this line REACT_APP_URL_ENDPOINT=http://localhost:5000 and type "npm start ".The backend endpoint is stored in a variable to make the application deployment easier.
+The frontend is built with JavaScript and React library. You need to have **Node js** and **Npm** installed on your computer. To run the application, make sure your backend is running. Then add a **.env** file in the root directory. In the **.env** file add this line REACT_APP_ENDPOINT=http://localhost:5000 and type "npm start ".The backend endpoint is stored in a variable to make the application deployment easier.
 
 
 

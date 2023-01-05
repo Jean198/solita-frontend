@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar/NavBar";
 import TripList from "./components/tripsList/TripsList";
 import StationsList from "./components/stationsList/StationsList";
-import StationsMap from "./components/stationsMap/StationsMap";
 import StationsContext from "./context/StationsContext";
 import AddTrip from "./components/addTrip/AddTrip";
 import AddStation from "./components/addStation/AddStation";
@@ -11,6 +10,8 @@ import "./App.css";
 import axios from "axios";
 import StationDetails from "./components/stationDetails/StationDetails";
 import Home from "./components/home/Home";
+
+export const URL=process.env.REACT_APP_ENDPOINT;
 
 function App() {
   const [data, setData] = useState({});
@@ -21,7 +22,7 @@ function App() {
     try {
       await axios
         .get(
-          `http://localhost:5000/stations/?page=${pageNumber}&search=${searchString}`
+          `${URL}/stations/?page=${pageNumber}&search=${searchString}`
         )
         .then((response) => {
           setData(response.data);
@@ -41,7 +42,7 @@ function App() {
 
   useEffect(() => {
     getStations();
-  }, [pageNumber, searchString]);
+  }, [searchString]);
 
   return (
     <Router>
@@ -51,8 +52,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/trips" element={<TripList />} />
-            <Route path="/stations-map" element={<StationsMap />} />
-
             <Route
               path="/stations"
               element={

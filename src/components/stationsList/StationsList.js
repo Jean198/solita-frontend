@@ -40,10 +40,10 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
           />
 
           {allStationsList &&
-            allStationsList.map((station) => {
+            allStationsList.map((station, index) => {
               if (station.x && station.y) {
                 return (
-                  <Marker position={[station.y, station.x]} icon={defaultIcon}>
+                  <Marker position={[station.y, station.x]} icon={defaultIcon} key={index}>
                     <Popup>
                       <b>{station.name} <br />{station.address} </b>
                     </Popup>
@@ -101,7 +101,7 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
               onPageChange={changePage}
               containerClassName={"pagination-list"}
               pageLinkClassName={"btn "}
-              previousClassName={"btn btn-info"}
+              previousClassName={"btn btn-info previous-button"}
               nextClassName={"btn btn-info"}
               activeLinkClassName={"btn btn-success"}
               disabledClassName={"btn btn-light"}

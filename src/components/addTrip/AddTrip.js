@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {URL} from '../../App'
 
 const AddTrip = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const AddTrip = () => {
       });
     }
     try {
-      await axios.post(`http://localhost:5000/trips/add-trip`, trip);
+      await axios.post(`${URL}/trips/add-trip`, trip);
       toast.success("Trip added successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });

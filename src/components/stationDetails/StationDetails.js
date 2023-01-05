@@ -8,6 +8,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import leaflet from "../../assets/leaflet/leaflet";
 import "leaflet/dist/leaflet.css";
 import { defaultIcon } from "../../icons/defaultIcon";
+import {URL} from '../../App'
 
 const StationDetails = () => {
   const data = useContext(StationsContext);
@@ -26,7 +27,7 @@ const StationDetails = () => {
     setLoading(true);
     try {
       await axios
-        .get(`http://localhost:5000/stations/station/${id}`)
+        .get(`${URL}/stations/station/${id}`)
         .then((response) => {
           setsingleStationData(response.data);
           setLoading(false);

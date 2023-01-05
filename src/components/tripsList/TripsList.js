@@ -7,6 +7,7 @@ import Trip from "../trip/Trip";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import loader from "../../assets/images/loader.gif";
+import {URL} from '../../App'
 
 const TripsList = () => {
   const [tripsData, setTripsData] = useState([]);
@@ -20,11 +21,12 @@ const TripsList = () => {
   const [popularReturnStations, setPopularReturnStations] = useState([]);
   const [loading, setLoading] = useState(false);
 
+
   const getTrips = async () => {
     setLoading(true);
     await axios
       .get(
-        `http://localhost:5000?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
+        `${URL}?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
       )
       .then((response) => {
         setTripsData(response.data.data);
@@ -85,7 +87,7 @@ const TripsList = () => {
           <tbody>
             {tripsData &&
               tripsData.map((trip, index) => {
-                return <Trip trip={trip} index={index} />;
+                return <Trip trip={trip} index={index} key={index}/>;
               })}
           </tbody>
         </table>
@@ -121,7 +123,7 @@ const TripsList = () => {
             {popularDepartureStations &&
               popularDepartureStations.map((station, index) => {
                 return (
-                  <p>
+                  <p key={index}>
                     {index + 1}. {station._id} (<b>{station.count}</b> departure
                     trips)
                   </p>
@@ -135,7 +137,7 @@ const TripsList = () => {
             {popularReturnStations &&
               popularReturnStations.map((station, index) => {
                 return (
-                  <p>
+                  <p key={index}>
                     {index + 1}. {station._id} (<b>{station.count}</b> Return
                     trips)
                   </p>

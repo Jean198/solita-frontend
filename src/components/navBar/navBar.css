@@ -13,6 +13,23 @@
     text-transform: capitalize!important;
 }
 
+.nav-item:hover{
+  box-shadow: #06454C 0px 0.5px 0px 0px;
+}
+.nav-item a:focus {
+  box-shadow: #06454C 0px 0.5px 0px 0px!important;
+  color: orange!important;
+}
+
+.focus{
+  box-shadow: #06454C 0px 0.5px 0px 0px!important;
+  color: orange!important;
+}
+
+.nav-item a:hover{
+  color: orange !important;;
+}
 .navbar-brand h2{
   font-weight: 900!important;
+  color: orange;
 }

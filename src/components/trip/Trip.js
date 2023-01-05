@@ -1,7 +1,7 @@
 import React from "react";
 import "./trip.css";
 
-const Trip = ({ trip, loading }) => {
+const Trip = ({ trip}) => {
   return (
     <>
       <tr>

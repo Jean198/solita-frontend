@@ -43,6 +43,7 @@ main{
 }
 .button{
     font-size: 30px!important;
+    font-weight: 900!important;
     letter-spacing: 5px;
     border:solid 1px orange!important;
     background: none!important;

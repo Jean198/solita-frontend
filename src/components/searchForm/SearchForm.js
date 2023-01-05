@@ -14,7 +14,7 @@ const SearchForm = ({handleSearch, searchString, handleOptionsChange}) => {
               onChange={handleOptionsChange}
             >
               <option value="departure_station_id" type="string">
-                Search by <i class="fa-solid fa-angle-down"></i>
+                Search by
               </option>
               <option value="departure_station_name" type="string">
                 Departure Station name
