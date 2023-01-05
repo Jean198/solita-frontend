@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {URL} from '../../App'
+import './addTrip.css'
 
 const AddTrip = () => {
   const navigate = useNavigate();
@@ -70,8 +71,11 @@ const AddTrip = () => {
   return (
     <div className="container">
       <ToastContainer />
-      <form className="form-inline" onSubmit={handleSubmit}>
-        <h2>Add new trip</h2>
+      <div className="add-trip-title-container">
+      <h2>Add new trip</h2>
+      </div>
+      <form className="form-inline add-trip-form" onSubmit={handleSubmit} >
+
         <div className="form-group ">
           <label htmlFor="email">Departure date :</label>
           <input
@@ -160,9 +164,11 @@ const AddTrip = () => {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit" className="btn btn-success mt-3">
+        <div className="add-trip-submit-button">
+        <button type="submit" className="btn btn-success mt-3 ">
           Submit
         </button>
+        </div>
       </form>
     </div>
   );
