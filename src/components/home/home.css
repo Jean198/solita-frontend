@@ -1,13 +1,15 @@
 .home-page{
     background-image: url('../../assets/images/home-img.jpg');
     background-size: cover;
-    min-height: 100vh;
+    max-height: 100vh;
     background-position: bottom;
     color: white;
+    border-radius:5px ;
 }
 
 main{
-    min-height: 100vh;
+    border-radius:5px ;
+    min-height: 90vh;
     background-image: linear-gradient(to top, rgba(0,0,0,0.4), #004249);
     border: solid 1px yellowe;
 }
@@ -27,6 +29,7 @@ main{
     align-items: center;
     justify-content: center;
     padding:7% 5%;
+    padding-top: 15%;
 }
 
 .homepage-title h1{
