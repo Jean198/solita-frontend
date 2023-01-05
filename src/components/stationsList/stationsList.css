@@ -1,3 +1,4 @@
+
 .station-link {
   cursor: pointer !important;
 }
@@ -12,5 +13,18 @@
   width: 100% !important;
   margin: 0 auto;
 }
+
+.map-container{
+  height: 70%!important;
+}
+
+.btn-info{
+  background-color: orange!important;
+  border: none!important;
+}
+
+
+
+
 
 

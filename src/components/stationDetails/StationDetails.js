@@ -50,7 +50,7 @@ const StationDetails = () => {
               <div key={index}>
                 <h1>{station.name}</h1><b>Street name:</b>{" "}
                       <span className="address">{station.address}</span>
-                <div className="row station-box">
+                <div className="row mb-5">
                   <MapContainer
                     center={[station.y, station.x]}
                     zoom={ZOOM_LEVEL}
@@ -109,7 +109,7 @@ const StationDetails = () => {
                   </ul>
                 </div>
 
-                <div className="row  station-box mt-3">
+                <div className="row  station-box ">
                   <h3 className="mb-5">Popular stations</h3>
                   <div className="col-lg-6">
                     <div className="mb-5">

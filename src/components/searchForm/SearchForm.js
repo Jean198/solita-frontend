@@ -4,7 +4,7 @@ import React from "react";
 const SearchForm = ({handleSearch, searchString, handleOptionsChange}) => {
   return (
     <>
-      <form class="form-outline mt-5">
+      <form className="form-outline mt-5">
         <div className="row">
           <div className="col-lg-3">
             <select

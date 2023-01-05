@@ -1,6 +1,6 @@
 .table{
     border:solid 1px #004249;
-    min-height: 50vh;
+
 }
 .table-head{
     background-color: #004249;
@@ -24,6 +24,12 @@
 
 .btn-success{
     background-color: #004249!important;
+    border: none!important;
+    color: white!important;
+    font-size: 20px!important;
+}
+a.btn.btn.btn-success {
+color: white!important;
 }
 
 

@@ -3,10 +3,14 @@
 .station-row{
     transition:0.4s;
     cursor: pointer !important;
+
 }
 .station-row:hover{
   background-color: grey;
   color: white;
+}
+tr, td{
+  max-height: 80px!important;
 }
 
 @media only screen and (max-width: 768px) {
