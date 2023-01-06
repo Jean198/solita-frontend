@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import StationsContext from "../../context/StationsContext";
 import "./stationDetails.css";
@@ -10,6 +10,7 @@ import "leaflet/dist/leaflet.css";
 import { defaultIcon } from "../../icons/defaultIcon";
 import { URL } from "../../App";
 
+//The single station View
 const StationDetails = () => {
   const data = useContext(StationsContext);
   const stationsList = data.data;
@@ -18,14 +19,13 @@ const StationDetails = () => {
   const [loading, setLoading] = useState(false);
 
   const ZOOM_LEVEL = 15;
-  const mapRef = useRef();
 
   let { id } = useParams();
 
   const countStationsOccurences = async (id) => {
     setLoading(true);
     try {
-      await axios.get(`${URL}/stations/station/${id}`).then((response) => {
+      await axios.get(`${URL}/stations/station/${id}`).then((response) => {//Fetching the sing station info
         setsingleStationData(response.data);
         setLoading(false);
       });
@@ -55,7 +55,6 @@ const StationDetails = () => {
                   <MapContainer
                     center={[station.y, station.x]}
                     zoom={ZOOM_LEVEL}
-                    ref={mapRef}
                   >
                     <TileLayer
                       url={leaflet.maptiler.url}

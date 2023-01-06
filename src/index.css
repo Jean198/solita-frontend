@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: 'Finlandica', sans-serif!important;
+  font-family: "Finlandica", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-hr{
-  color:#004249!important;
+hr {
+  color: #004249 !important;
 }

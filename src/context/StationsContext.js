@@ -1,7 +1,7 @@
-import { createContext } from "react";
 
+//StationsLists Context
+import { createContext } from "react";
 
 const StationsContext = createContext();
 
-
-export default StationsContext
+export default StationsContext;

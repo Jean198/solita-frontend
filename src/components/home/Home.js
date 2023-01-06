@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 
+//The Home page
 const Home = () => {
   return (
     <div className="home-page">

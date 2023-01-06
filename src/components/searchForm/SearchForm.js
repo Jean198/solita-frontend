@@ -1,7 +1,8 @@
 import "./searchForm.css";
 import React from "react";
 
-const SearchForm = ({handleSearch, searchString, handleOptionsChange}) => {
+//The trips search form
+const SearchForm = ({ handleSearch, searchString, handleOptionsChange }) => {
   return (
     <>
       <form className="form-outline mt-5">
@@ -12,9 +13,8 @@ const SearchForm = ({handleSearch, searchString, handleOptionsChange}) => {
               id="lang"
               className="trips-form form-select form-control shadow-none "
               onChange={handleOptionsChange}
-
             >
-              <option  value="departure_station_id" type="string">
+              <option value="departure_station_id" type="string">
                 <div>Search by</div>
               </option>
               <option value="departure_station_name" type="string">

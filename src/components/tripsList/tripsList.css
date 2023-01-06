@@ -1,101 +1,89 @@
-.table{
-    border:solid 1px #004249;
-
+.table {
+  border: solid 1px #004249;
 }
 
-.scrollable{
-    height:500px;
-    overflow: scroll;
-  }
-
-thead{ position: sticky; top: 0; z-index: 1 !important; }
-
-.table-head{
-    background-color: #004249;
-    color:white;
+.scrollable {
+  height: 500px;
+  overflow: scroll;
 }
 
-
-.data-statistics{
-    background-color: #004249;
-    color: white;
-    padding: 5px 15px;
-    text-align: center;
-}
-.pagination-btn{
-    padding-top: 0px!important;
-    padding-bottom: 0px!important;
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1 !important;
 }
 
-.btn-success{
-    background-color: #004249!important;
-    border: none!important;
-    color: white!important;
-    font-size: 20px!important;
+.table-head {
+  background-color: #004249;
+  color: white;
+}
+
+.data-statistics {
+  background-color: #004249;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+}
+.pagination-btn {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.btn-success {
+  background-color: #004249 !important;
+  border: none !important;
+  color: white !important;
+  font-size: 20px !important;
 }
 a.btn.btn.btn-success {
-color: white!important;
+  color: white !important;
 }
 
-
-
-.pagination-list{
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-
+.pagination-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
 }
 
-
-
-.pagination-list a{
-    text-decoration: none;
-    color:black !important
-
+.pagination-list a {
+  text-decoration: none;
+  color: black !important;
 }
 
-.popular-stations{
-    background: linear-gradient(to top, rgba(0,0,0,1), #004249);
-    display: flex;
-    justify-content: center;
-    color: white;
-    padding: 10%;
-    margin-bottom: 10px;
+.popular-stations {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), #004249);
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 10%;
+  margin-bottom: 10px;
 }
 
-.popular-stations h4{
-    color:orange;
+.popular-stations h4 {
+  color: orange;
 }
 
-.popular-departure-stations{
-    border-right:solid orange 1px !important;
-
+.popular-departure-stations {
+  border-right: solid orange 1px !important;
 }
 
-.popular-return-stations{
-    padding-left: 50px!important;
-
-
-
-
+.popular-return-stations {
+  padding-left: 50px !important;
 }
 
 @media only screen and (max-width: 768px) {
-    .popular-return-stations {
-        padding-left: 0px !important;
-        margin-top: 15%!important;
-
-    }
+  .popular-return-stations {
+    padding-left: 0px !important;
+    margin-top: 15% !important;
   }
+}
 
+.trips-loading {
+  text-align: center;
+  height: 30px !important;
+}
 
-  .trips-loading{
-    text-align: center;
-    height:30px!important;
-  }
-
-  .loader{
-    width:30px
-  }
-
+.loader {
+  width: 30px;
+}

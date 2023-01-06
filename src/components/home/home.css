@@ -1,79 +1,76 @@
-.home-page{
-    background-image: url('../../assets/images/home-img.jpg');
-    background-size: cover;
-    max-height: 100vh;
-    background-position: bottom;
-    color: white;
-    border-radius:5px ;
+.home-page {
+  background-image: url("../../assets/images/home-img.jpg");
+  background-size: cover;
+  max-height: 100vh;
+  background-position: bottom;
+  color: white;
+  border-radius: 5px;
 }
 
-main{
-    border-radius:5px ;
-    min-height: 90vh;
-    background-image: linear-gradient(to top, rgba(0,0,0,0.4), #004249);
-    border: solid 1px yellowe;
+main {
+  border-radius: 5px;
+  min-height: 90vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), #004249);
+  border: solid 1px yellowe;
 }
 
-
-
-.home-page h1{
-    font-weight: 900;
-    font-size: 4rem;
+.home-page h1 {
+  font-weight: 900;
+  font-size: 4rem;
 }
 
-.homepage-title{
-
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding:7% 5%;
-    padding-top: 15%;
+.homepage-title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 7% 5%;
+  padding-top: 15%;
 }
 
-.homepage-title h1{
-    letter-spacing: 10px;
+.homepage-title h1 {
+  letter-spacing: 10px;
 }
-.homepage-title h4{
-    letter-spacing: 5px;
-    color: orange;
+.homepage-title h4 {
+  letter-spacing: 5px;
+  color: orange;
 }
-.buttons-div{
-    width: 60%!important;
-    text-align: center!important;
-    margin: 0 auto!important;
+.buttons-div {
+  width: 60% !important;
+  text-align: center !important;
+  margin: 0 auto !important;
 }
-.button{
-    font-size: 30px!important;
-    font-weight: 900!important;
-    letter-spacing: 5px;
-    border:solid 1px orange!important;
-    background: none!important;
-    transition: 0.35!important;
-    width: 50%;
+.button {
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  letter-spacing: 5px;
+  border: solid 1px orange !important;
+  background: none !important;
+  transition: 0.35 !important;
+  width: 50%;
 }
 
-.button:hover{
-    background-color:orange!important;
-    color: black !important;
-    border: none !important;
+.button:hover {
+  background-color: orange !important;
+  color: black !important;
+  border: none !important;
 }
 
 @media only screen and (max-width: 768px) {
-    .home-page h1{
-        font-weight: 900;
-        font-size: 3rem;
-    }
-
-    .homepage-title h4{
-        font-size: 1.2rem;
-    }
-    .buttons-div {
-      width: 100%!important;
-    }
-    .button{
-        width: 70%;
-        font-size: 20px!important;
-    }
+  .home-page h1 {
+    font-weight: 900;
+    font-size: 3rem;
   }
+
+  .homepage-title h4 {
+    font-size: 1.2rem;
+  }
+  .buttons-div {
+    width: 100% !important;
+  }
+  .button {
+    width: 70%;
+    font-size: 20px !important;
+  }
+}

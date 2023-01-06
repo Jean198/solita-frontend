@@ -24,7 +24,7 @@ const TripsList = () => {
     setLoading(true);
     await axios
       .get(
-        `${URL}?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}`
+        `${URL}?limit=${limit}&page=${pageNumber}&search=${searchString}&searchType=${searchType}` //Getting trips with specified parameters
       )
       .then((response) => {
         setTripsData(response.data.data);
@@ -37,17 +37,17 @@ const TripsList = () => {
     setLoading(false);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e) => { //Catching form inputs
     console.log(e.target.value);
     setSearchString(e.target.value);
   };
 
-  const handleOptionsChange = (e) => {
+  const handleOptionsChange = (e) => { //Catching the search options
     console.log(e.target.value);
     setSearchType(e.target.value);
   };
 
-  const changePage = ({ selected }) => {
+  const changePage = ({ selected }) => { //Setting the current page
     setPageNumber(selected);
   };
 
@@ -57,9 +57,6 @@ const TripsList = () => {
 
   return (
     <div className="container">
-      {/* <div>
-        <img src={bike_img} alt="" className="bikes-img" />
-      </div>*/}
       <SearchForm
         handleSearch={handleSearch}
         searchString={searchString}

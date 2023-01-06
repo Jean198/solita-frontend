@@ -23,9 +23,6 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
 
   return (
     <div className="row  mt-5">
-      {/*  <div className="col-lg-6 station-img-container">
-        <img src={station_img} alt="" className="station-img" />
-      </div>*/}
       <div className="col-lg-6 all-stations-map">
         <MapContainer
           className="map-container"
@@ -42,9 +39,16 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
             allStationsList.map((station, index) => {
               if (station.x && station.y) {
                 return (
-                  <Marker position={[station.y, station.x]} icon={defaultIcon} key={index}>
+                  <Marker
+                    position={[station.y, station.x]}
+                    icon={defaultIcon}
+                    key={index}
+                  >
                     <Popup>
-                      <b>{station.name} <br />{station.address} </b>
+                      <b>
+                        {station.name} <br />
+                        {station.address}{" "}
+                      </b>
                     </Popup>
                   </Marker>
                 );
@@ -102,8 +106,8 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
               pageLinkClassName={" pagination-btn btn "}
               previousClassName={" pagination-btn btn btn-info previous-button"}
               nextClassName={" pagination-btn btn btn-info"}
-              activeLinkClassName={" btn btn-success"}
-              disabledClassName={"btn btn-light"}
+              activeLinkClassName={" pagination-btn  btn btn-success"}
+              disabledClassName={" pagination-btn  btn btn-light"}
             />
           </div>
         </div>

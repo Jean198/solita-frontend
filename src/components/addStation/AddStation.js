@@ -27,7 +27,7 @@ const AddStation = () => {
     });
   };
 
-  // Post a new Station
+
   const handleSubmit = async (event) => { // handling the form submition
     console.log(station);
     event.preventDefault();

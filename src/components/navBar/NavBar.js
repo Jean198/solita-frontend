@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navBar.css";
 
+//The navigation bar
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-none">

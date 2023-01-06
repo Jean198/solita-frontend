@@ -6,24 +6,21 @@ import StationsList from "./components/stationsList/StationsList";
 import StationsContext from "./context/StationsContext";
 import AddTrip from "./components/addTrip/AddTrip";
 import AddStation from "./components/addStation/AddStation";
-import "./App.css";
 import axios from "axios";
 import StationDetails from "./components/stationDetails/StationDetails";
 import Home from "./components/home/Home";
 
-export const URL=process.env.REACT_APP_ENDPOINT;
+export const URL = process.env.REACT_APP_ENDPOINT;
 
 function App() {
   const [data, setData] = useState({});
   const [pageNumber, setPageNumber] = useState(0);
   const [searchString, setSearchString] = useState("");
 
-  const getStations = async () => {
+  const getStations = async () => {//Fetching the stations data here, because I need to easily pass the to the context
     try {
       await axios
-        .get(
-          `${URL}/stations/?page=${pageNumber}&search=${searchString}`
-        )
+        .get(`${URL}/stations/?page=${pageNumber}&search=${searchString}`)
         .then((response) => {
           setData(response.data);
         });
@@ -42,7 +39,7 @@ function App() {
 
   useEffect(() => {
     getStations();
-  },[pageNumber,searchString]);
+  }, [pageNumber, searchString]);
 
   return (
     <Router>

@@ -3,13 +3,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {URL} from '../../App'
-import './addTrip.css'
+import { URL } from "../../App";
+import "./addTrip.css";
 
 const AddTrip = () => {
   const navigate = useNavigate();
 
-  const [trip, setTrip] = useState({
+  const [trip, setTrip] = useState({ //New trip object to post to the database
     departureDate: "",
     returnDate: "",
     departureStationId: "",
@@ -20,15 +20,14 @@ const AddTrip = () => {
     duration: "",
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event) => { //Caching form inputs
     const { name, value } = event.target;
     setTrip((prevTrip) => {
       return { ...prevTrip, [name]: value };
     });
   };
 
-  // Post a new trip
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => { // handling the form submition
     console.log(trip);
     event.preventDefault();
     if (
@@ -46,11 +45,11 @@ const AddTrip = () => {
       });
     }
     try {
-      await axios.post(`${URL}/trips/add-trip`, trip);
+      await axios.post(`${URL}/trips/add-trip`, trip); //Posting the new trip
       toast.success("Trip added successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
-      setTrip({
+      setTrip({ //Emptying the form fields after submition
         returnDate: "",
         departureStationId: "",
         departureStationName: "",
@@ -60,7 +59,7 @@ const AddTrip = () => {
         duration: "",
       });
 
-      setTimeout(() => {
+      setTimeout(() => { //Redirecting to stations page after form submition
         navigate("/trips");
       }, 2000);
     } catch (error) {
@@ -72,10 +71,9 @@ const AddTrip = () => {
     <div className="container">
       <ToastContainer />
       <div className="add-trip-title-container">
-      <h2>Add new trip</h2>
+        <h2>Add new trip</h2>
       </div>
-      <form className="form-inline add-trip-form" onSubmit={handleSubmit} >
-
+      <form className="form-inline add-trip-form" onSubmit={handleSubmit}>
         <div className="form-group ">
           <label htmlFor="email">Departure date :</label>
           <input
@@ -165,9 +163,9 @@ const AddTrip = () => {
           />
         </div>
         <div className="add-trip-submit-button">
-        <button type="submit" className="btn btn-success mt-3 ">
-          Submit
-        </button>
+          <button type="submit" className="btn btn-success mt-3 ">
+            Submit
+          </button>
         </div>
       </form>
     </div>
