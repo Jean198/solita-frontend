@@ -7,18 +7,22 @@
     padding: 5% 5%;
 }
 
+.station-big-title{
+  color:#004249
+}
+
 .leaflet-container{
 height:400px;
 width:100%;
 }
 
 .address{
-  color:#157347;
+  color:orange;
 }
 
-.station-box{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 5% 3%;
+
+.popular-station-title{
+  color: #004249;
 }
 
 

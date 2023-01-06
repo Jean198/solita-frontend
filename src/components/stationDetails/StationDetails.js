@@ -8,7 +8,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import leaflet from "../../assets/leaflet/leaflet";
 import "leaflet/dist/leaflet.css";
 import { defaultIcon } from "../../icons/defaultIcon";
-import {URL} from '../../App'
+import { URL } from "../../App";
 
 const StationDetails = () => {
   const data = useContext(StationsContext);
@@ -16,7 +16,6 @@ const StationDetails = () => {
   console.log(stationsList);
   const [singleStationData, setsingleStationData] = useState([]);
   const [loading, setLoading] = useState(false);
-
 
   const ZOOM_LEVEL = 15;
   const mapRef = useRef();
@@ -26,12 +25,10 @@ const StationDetails = () => {
   const countStationsOccurences = async (id) => {
     setLoading(true);
     try {
-      await axios
-        .get(`${URL}/stations/station/${id}`)
-        .then((response) => {
-          setsingleStationData(response.data);
-          setLoading(false);
-        });
+      await axios.get(`${URL}/stations/station/${id}`).then((response) => {
+        setsingleStationData(response.data);
+        setLoading(false);
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -49,8 +46,11 @@ const StationDetails = () => {
           .map((station, index) => {
             return (
               <div key={index}>
-                <h1>{station.name}</h1><b>Street name:</b>{" "}
-                      <span className="address">{station.address}</span>
+                <div className="text-center mb-3 station-big-title">
+                  <h1>{station.name}</h1>
+                  <b>Street name:</b>{" "}
+                  <span className="address">{station.address}</span>
+                </div>
                 <div className="row mb-5">
                   <MapContainer
                     center={[station.y, station.x]}
@@ -71,11 +71,9 @@ const StationDetails = () => {
                     </Marker>
                   </MapContainer>
                 </div>
-
                 <div className="row station-box">
                   <ul>
                     <li>
-
                       <ul className="mt-3">
                         <li>
                           Number of trips starting from this Station:{" "}
@@ -109,15 +107,15 @@ const StationDetails = () => {
                     </li>
                   </ul>
                 </div>
-
-                <div className="row  station-box ">
-                  <h3 className="mb-5">Popular stations</h3>
+                <hr />
+                <div className="row mt-5 ">
+                  <div className="popular-station-title">
+                    <h3 className="mb-5">Popular stations</h3>
+                  </div>
                   <div className="col-lg-6">
                     <div className="mb-5">
-                      <b>
-                        Popular departure stations for trips ending at{" "}
-                        <span className="address">{station.name}</span>
-                      </b>
+                      <b>Popular departure stations for trips ending at </b>
+                      <span className="address">{station.name}</span>
                     </div>
 
                     {loading ? (
@@ -145,10 +143,8 @@ const StationDetails = () => {
 
                   <div className="col-lg-6">
                     <div className="mb-5">
-                      <b>
-                        Popular return stations for trips starting at{" "}
-                        <span className="address">{station.name}</span>
-                      </b>
+                      <b>Popular return stations for trips starting at </b>
+                      <span className="address">{station.name}</span>
                     </div>
 
                     {loading ? (
