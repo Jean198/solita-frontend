@@ -24,7 +24,7 @@ const StationDetails = () => {
   const countStationsOccurences = async (id) => {
     setLoading(true);
     try {
-      await axios.get(`${URL}/stations/station/${id}`).then((response) => {//Fetching the sing station info
+      await axios.get(`${URL}stations/station/${id}`).then((response) => {//Fetching the sing station info
         setsingleStationData(response.data);
         setLoading(false);
       });
