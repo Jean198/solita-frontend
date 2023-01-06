@@ -2,9 +2,9 @@
   cursor: pointer !important;
 }
 
-.station-img {
+.leaflet-container {
+  height: 400px;
   width: 100%;
-  height: auto;
 }
 
 .stations-table {

@@ -14,7 +14,6 @@ import { URL } from "../../App";
 const StationDetails = () => {
   const data = useContext(StationsContext);
   const stationsList = data.data;
-  console.log(stationsList);
   const [singleStationData, setsingleStationData] = useState([]);
   const [loading, setLoading] = useState(false);
 
