@@ -23,6 +23,8 @@ function App() {
         .get(`${URL}/stations/?page=${pageNumber}&search=${searchString}`)
         .then((response) => {
           setData(response.data);
+          setPageNumber(response.data.paging.page)
+          console.log(response.data.paging.page)
         });
     } catch (error) {
       console.log(error.message);
@@ -34,12 +36,13 @@ function App() {
   };
 
   const handleSearch = (e) => {
+
     setSearchString(e.target.value);
   };
 
   useEffect(() => {
     getStations();
-  }, [pageNumber, searchString]);
+  }, [searchString,pageNumber]);
 
   return (
     <Router>

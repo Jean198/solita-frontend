@@ -71,6 +71,7 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
                   nextLabel={">>"}
                   pageCount={numberOfPages}
                   onPageChange={changePage}
+                  forcePage={pageNumber}
                   containerClassName={" pagination-btn pagination-list"}
                   pageLinkClassName={" pagination-btn btn "}
                   previousClassName={

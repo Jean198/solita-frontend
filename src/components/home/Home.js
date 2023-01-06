@@ -15,10 +15,10 @@ const Home = () => {
         </div>
         <div className="row buttons-div">
           <Link to="/trips">
-            <div className="btn btn-lg btn-dark button">Go to Trips</div>
+            <div className="btn btn-lg btn-dark button">Go to trips</div>
           </Link>
           <Link to="/stations">
-            <div className="btn btn-lg button btn-dark mt-3">See Stations</div>
+            <div className="btn btn-lg button btn-dark mt-3">See stations</div>
           </Link>
         </div>
       </main>
