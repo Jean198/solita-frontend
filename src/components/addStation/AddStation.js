@@ -3,8 +3,8 @@ import "./addStation.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import {useNavigate} from 'react-router-dom';
-import {URL} from '../../App'
+import { useNavigate } from "react-router-dom";
+import { URL } from "../../App";
 
 const AddStation = () => {
   const navigate = useNavigate();
@@ -50,21 +50,20 @@ const AddStation = () => {
       toast.success("Station added successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
-      setStation( {
-          fid: "",
-          stationId: "",
-          stationName: "",
-          stationAddress: "",
-          city: "",
-          operator: "",
-          latitude: "",
-          longitude: "",
-        }
-      );
+      setStation({
+        fid: "",
+        stationId: "",
+        stationName: "",
+        stationAddress: "",
+        city: "",
+        operator: "",
+        latitude: "",
+        longitude: "",
+      });
 
-      setTimeout(()=>{
-        navigate('/stations');
-      },2000)
+      setTimeout(() => {
+        navigate("/stations");
+      }, 2000);
     } catch (error) {
       toast.error(error.message);
     }
@@ -73,8 +72,10 @@ const AddStation = () => {
   return (
     <div className="container">
       <ToastContainer />
-      <form className="form-inline" onSubmit={handleSubmit}>
+      <div className="add-station-title-container">
         <h2>Add new station</h2>
+      </div>
+      <form className="form-inline add-station-form" onSubmit={handleSubmit}>
         <div className="form-group ">
           <label htmlFor="email">FID :</label>
           <input
@@ -162,9 +163,12 @@ const AddStation = () => {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit" className="btn btn-success mt-3">
-          Submit
-        </button>
+
+        <div className="add-station-submit-button">
+          <button type="submit" className="btn btn-success mt-3">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
