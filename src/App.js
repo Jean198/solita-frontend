@@ -20,7 +20,7 @@ function App() {
   const getStations = async () => {//Fetching the stations data here, because I need to easily pass the to the context
     try {
       await axios
-        .get(`${URL}/stations/?page=${pageNumber}&search=${searchString}`)
+        .get(`${URL}stations/?page=${pageNumber}&search=${searchString}`)
         .then((response) => {
           setData(response.data);
           setPageNumber(response.data.paging.page)

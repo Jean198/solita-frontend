@@ -45,7 +45,7 @@ const AddTrip = () => {
       });
     }
     try {
-      await axios.post(`${URL}/trips/add-trip`, trip); //Posting the new trip
+      await axios.post(`${URL}trips/add-trip`, trip); //Posting the new trip
       toast.success("Trip added successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
@@ -60,8 +60,8 @@ const AddTrip = () => {
       });
 
       setTimeout(() => { //Redirecting to stations page after form submition
-        navigate("/trips");
-      }, 2000);
+        navigate("trips");
+      }, 3000);
     } catch (error) {
       toast.error(error.message);
     }
