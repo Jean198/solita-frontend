@@ -46,7 +46,7 @@ const AddStation = () => {
       });
     }
     try {
-      await axios.post(`${URL}/stations/add-station`, station); //Posting the new station
+      await axios.post(`${URL}stations/add-station`, station); //Posting the new station
       toast.success("Station added successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
@@ -62,8 +62,8 @@ const AddStation = () => {
       });
 
       setTimeout(() => { //Redirecting to stations page after form submition
-        navigate("/stations");
-      }, 2000);
+        navigate("stations");
+      }, 3000);
     } catch (error) {
       toast.error(error.message);
     }
