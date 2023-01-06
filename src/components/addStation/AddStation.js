@@ -62,7 +62,7 @@ const AddStation = () => {
       });
 
       setTimeout(() => { //Redirecting to stations page after form submition
-        navigate("stations");
+        navigate("/stations");
       }, 3000);
     } catch (error) {
       toast.error(error.message);

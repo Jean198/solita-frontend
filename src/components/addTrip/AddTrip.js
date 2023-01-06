@@ -60,7 +60,7 @@ const AddTrip = () => {
       });
 
       setTimeout(() => { //Redirecting to stations page after form submition
-        navigate("trips");
+        navigate("/trips");
       }, 3000);
     } catch (error) {
       toast.error(error.message);
@@ -114,7 +114,7 @@ const AddTrip = () => {
             className="form-control form-control-sm"
             id="departure-station-id"
             name="departureStationName"
-            value={trip.returnStationName}
+            value={trip.departureStationName}
             onChange={handleInputChange}
           />
         </div>
