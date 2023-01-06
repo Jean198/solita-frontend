@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Station = ({ station, index }) => {
   const navigate = useNavigate();
   const handleRowClick = (id) => {
-    navigate(`stations/station/${station.id}`);
+    navigate(`station/${station.id}`);
   };
 
   return (
