@@ -11,12 +11,12 @@ import { defaultIcon } from "../../icons/defaultIcon";
 
 const StationsList = ({ changePage, handleSearch, searchString }) => {
   const data = useContext(StationsContext);
-  const stationsList = data.data;
-  const allStationsList = data.allStations;
-  const paging = data.paging;
-  const totalRows = paging.total;
-  const pageNumber = paging.page;
-  const numberOfPages = paging.numberOfPages;
+  const stationsList = data?data.data:null;
+  const allStationsList = data?data.allStations:null;
+  const paging = data?data.paging:null;
+  const totalRows = paging?paging.total:0;
+  const pageNumber = paging?paging.page:0;
+  const numberOfPages = paging?paging.numberOfPages:0;
 
   const ZOOM_LEVEL = 11;
   const mapRef = useRef();
