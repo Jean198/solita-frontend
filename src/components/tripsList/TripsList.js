@@ -38,12 +38,10 @@ const TripsList = () => {
   };
 
   const handleSearch = (e) => { //Catching form inputs
-    console.log(e.target.value);
     setSearchString(e.target.value);
   };
 
   const handleOptionsChange = (e) => { //Catching the search options
-    console.log(e.target.value);
     setSearchType(e.target.value);
   };
 
