@@ -9,7 +9,7 @@ import { URL } from "../../App";
 const AddStation = () => {
   const navigate = useNavigate();
 
-  const [station, setStation] = useState({
+  const [station, setStation] = useState({ // New station object to post to the database
     fid: "",
     stationId: "",
     stationName: "",
@@ -20,7 +20,7 @@ const AddStation = () => {
     longitude: "",
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event) => { //Caching form inputs
     const { name, value } = event.target;
     setStation((prevStation) => {
       return { ...prevStation, [name]: value };
@@ -28,7 +28,7 @@ const AddStation = () => {
   };
 
   // Post a new Station
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => { // handling the form submition
     console.log(station);
     event.preventDefault();
     if (
@@ -46,11 +46,11 @@ const AddStation = () => {
       });
     }
     try {
-      await axios.post(`${URL}/stations/add-station`, station);
+      await axios.post(`${URL}/stations/add-station`, station); //Posting the new station
       toast.success("Station added successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
-      setStation({
+      setStation({ //Emptying the form fields after submition
         fid: "",
         stationId: "",
         stationName: "",
@@ -61,7 +61,7 @@ const AddStation = () => {
         longitude: "",
       });
 
-      setTimeout(() => {
+      setTimeout(() => { //Redirecting to stations page after form submition
         navigate("/stations");
       }, 2000);
     } catch (error) {

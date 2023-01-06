@@ -1,45 +1,44 @@
-.form-inline{
-    width:50%;
-    margin: 0 auto;
-    border:solid 1px #157347;
-    padding: 5% 3%;
+.form-inline {
+  width: 50%;
+  margin: 0 auto;
+  border: solid 1px #157347;
+  padding: 5% 3%;
 }
 
 @media only screen and (max-width: 768px) {
-    .form-inline {
-      width: 100%!important;
-    }
+  .form-inline {
+    width: 100% !important;
   }
-
-  .add-station-title-container{
-    text-align: center;
-    margin-top: 5%;
-    color:#004249;
 }
 
-
-
-.add-station-form{
-    border: none !important;;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.add-station-title-container {
+  text-align: center;
+  margin-top: 5%;
+  color: #004249;
 }
 
-.add-station-form input{
-    border: none !important;;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 2px!important;
+.add-station-form {
+  border: none !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.add-station-submit-button{
-    margin: 0 auto!important;
-    text-align: center;
-}
-.add-station-submit-button button{
-    background-color: orange!important;
+.add-station-form input {
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 2px !important;
 }
 
-.add-station-submit-button button:hover{
- background:none!important;
- color:#004249!important;
- border: solid 1px orange!important;
+.add-station-submit-button {
+  margin: 0 auto !important;
+  text-align: center;
+}
+.add-station-submit-button button {
+  background-color: orange !important;
+}
+
+.add-station-submit-button button:hover {
+  background: none !important;
+  color: #004249 !important;
+  border: solid 1px orange !important;
 }
