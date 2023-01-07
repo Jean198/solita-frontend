@@ -81,10 +81,11 @@ const TripsList = () => {
               })}
           </tbody>
         </table>
-      </div>
-      <div className="trips-loading">
+        <div className="trips-loading">
         {loading && <img src={loader} alt="" className="loader" />}
       </div>
+      </div>
+
       <div className="row mt-5">
         <div className="col-lg-4">
           <p className="data-statistics">

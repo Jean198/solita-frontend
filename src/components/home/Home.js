@@ -8,7 +8,7 @@ const Home = () => {
     <div className="home-page">
       <main>
         <div className="homepage-title">
-          <h1>Helsinki Bike Trips</h1>
+          <h1>Helsinki city bikes</h1>
           <h4 className="mt-3">
             All rent bike's trips information in one place!
           </h4>
