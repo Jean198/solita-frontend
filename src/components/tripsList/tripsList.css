@@ -5,6 +5,7 @@
 .scrollable {
   height: 500px;
   overflow: scroll;
+  position: relative;
 }
 
 thead {
@@ -81,9 +82,12 @@ a.btn.btn.btn-success {
 
 .trips-loading {
   text-align: center;
-  height: 30px !important;
+  height: 50px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .loader {
-  width: 30px;
+  width: 40px;
 }

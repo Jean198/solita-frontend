@@ -3,7 +3,7 @@ import Station from "../station/Station";
 import StationsContext from "../../context/StationsContext";
 import "./stationsList.css";
 import ReactPaginate from "react-paginate";
-
+import loader from "../../assets/images/loader.gif";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import leaflet from "../../assets/leaflet/leaflet";
 import "leaflet/dist/leaflet.css";
@@ -36,8 +36,8 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
               onChange={handleSearch}
             />
           </form>
-          <div className="table-responsive ">
-            <table className=" table stations-table">
+          <div className="table-responsive scrollable ">
+            <table className=" table stations-table ">
               <thead className="table-head ">
                 <tr>
                   <th scope="col"></th>
@@ -54,6 +54,9 @@ const StationsList = ({ changePage, handleSearch, searchString }) => {
                   })}
               </tbody>
             </table>
+            <div className="stations-loading">
+              {!data.data && <img src={loader} alt="" className="loader" />}
+            </div>
           </div>
 
           <div className="">
