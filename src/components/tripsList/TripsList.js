@@ -37,15 +37,18 @@ const TripsList = () => {
     setLoading(false);
   };
 
-  const handleSearch = (e) => { //Catching form inputs
+  const handleSearch = (e) => {
+    //Catching form inputs
     setSearchString(e.target.value);
   };
 
-  const handleOptionsChange = (e) => { //Catching the search options
+  const handleOptionsChange = (e) => {
+    //Catching the search options
     setSearchType(e.target.value);
   };
 
-  const changePage = ({ selected }) => { //Setting the current page
+  const changePage = ({ selected }) => {
+    //Setting the current page
     setPageNumber(selected);
   };
 
@@ -82,8 +85,8 @@ const TripsList = () => {
           </tbody>
         </table>
         <div className="trips-loading">
-        {loading && <img src={loader} alt="" className="loader" />}
-      </div>
+          {loading && <img src={loader} alt="" className="loader" />}
+        </div>
       </div>
 
       <div className="row mt-5">
