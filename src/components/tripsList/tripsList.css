@@ -77,6 +77,11 @@ a.btn.btn.btn-success {
   .popular-return-stations {
     padding-left: 0px !important;
     margin-top: 15% !important;
+
+  }
+
+  .popular-departure-stations{
+    border-right: none!important;
   }
 }
 
