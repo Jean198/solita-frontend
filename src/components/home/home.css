@@ -9,7 +9,7 @@
 
 main {
   border-radius: 5px;
-  min-height: 90vh;
+  min-height: 89vh;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), #004249);
   border: solid 1px yellowe;
 }
